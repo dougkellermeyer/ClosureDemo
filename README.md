@@ -1,5 +1,5 @@
 # Closures in JavaScript
-## Closures incredibly useful and prevelant in JavaScript, but often misunderstood
+## Closures are incredibly useful and prevelant in JavaScript, but often misunderstood
 
 ### So what exactly is closure?
 - **Closure** - when a function is able to access its lexical scope, even when the function is executing outside of its lexcial scope
@@ -19,5 +19,8 @@
     access(); // => 1 
     ```
     * So what's happening here? 
-     * 
+     * We assign the `outer()`function to the variable `access`
+     * We invoke `access` as a function `access()`, which invokes `outer()`
+     * Because `outer()` returns the `inner()` function, invoking `access()` essentially executes `inner()`
+     * Although `inner()`is being executed outside of its original lexical scope, it stil has access to its lexical scope and is a textbook example of **closure**
 
