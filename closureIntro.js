@@ -40,5 +40,5 @@ console.log(attempt('blanket')) // returns false
 console.log(attempt('pillow')) // returns true
 
 console.log(checkSecret())
-console.log(checkSecret.toString()) // => obviously you can access the "secret" variable using closure, so keep that in mind
+console.log(checkSecret.toString()) // => obviously you can access the "secret" variable using closure, so keep that in mind :)
 
