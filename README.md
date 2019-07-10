@@ -11,8 +11,8 @@
         var a = 1;
         return function inner(){
             console.log(a);
-        }
-    }
+        };
+    };
 
     var access = outer() 
 
@@ -24,3 +24,22 @@
      * Because `outer()` returns the `inner()` function, invoking `access()` essentially executes `inner()`
      * Although `inner()`is being executed outside of its original lexical scope, it stil has access to its lexical scope and is a textbook example of **closure**
 
+
+## So closures are a thing, but how are they utilized?
+ ### There are few common use cases for closures...  
+ 1. ### Data-privacy
+    * Closures are commonly used to provide object data privacy
+
+        ```javascript
+        function secret(msg){
+            return function(){
+                return msg;
+            };
+        };
+        ```
+    * The function `secret()` takes the argument `msg` and returns a new function that returns `msg`. This means that whatever we pass into `secret()` becomes the value of `msg`. 
+    * Like this:
+        ```javascript 
+        var mySecret = secret('hi');
+        mySecret(); // => 'hi'
+        ```
