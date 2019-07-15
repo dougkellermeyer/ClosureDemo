@@ -2,9 +2,14 @@
 ## Closures are incredibly useful and prevelant in JavaScript, but often misunderstood
 
 ### So what exactly is closure?
-- **Closure** - when a function is able to access its lexical scope, even when the function is executing outside of its lexcial scope
+- **Closure** - is the combination of a function and the lexical environment within which that function was declared
+ * Another way to think about it is when a function is able to access its lexical scope, even when the function is executing outside of its lexcial scope
 
-- Let's see this in action:
+## Every closure has 3 scopes:
+ * Local scope (own scope)
+ * Outer functions scope
+ * Global scope
+  - Let's see this in action:
 
     ```javascript
     function outer(){
@@ -43,3 +48,5 @@
         var mySecret = secret('hi');
         mySecret(); // => 'hi'
         ```
+
+ 2. Events and Callbacks
