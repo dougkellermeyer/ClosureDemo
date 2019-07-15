@@ -7,11 +7,4 @@ function helloName (name){
 var hiDoug = helloName('Doug')
 hiDoug() // => hello Doug
 
-function closureCounter(arr){
-    return function(){
-        return arr[0]+1
-    };
-};
 
-var showMe = closureCounter([0,1]);
-console.log(showMe())
