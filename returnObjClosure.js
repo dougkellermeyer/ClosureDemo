@@ -17,16 +17,17 @@ var counter = function() {
     }
 };
 
+//each closure is independent from each other 
+//and references a different version of the privateCounter
+
 var counter1 = counter();
 
-console.log(counter1.showValue()); // => 0
+counter1.showValue(); // => 0
 
 counter1.increment();
 counter1.increment();
 
-console.log(counter1.showValue()) // => 2
-
-//each closure is independent from each other and references a different versin of the privateCounter
+counter1.showValue(); // => 2
 
 var counter2 = counter();
-console.log(counter2.showValue()) // => 0
+counter2.showValue(); // => 0
