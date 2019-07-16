@@ -26,8 +26,9 @@
     };
 
         var button = document.getElementById('button');
+        
         button.addEventListener('click', debounce(function () {
-            console.log('Hey! It is', new Date().toUTCString());
+            console.log('Todays date is', new Date().toUTCString());
         }, 3000));
     </script>
 </body>
