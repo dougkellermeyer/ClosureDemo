@@ -10,26 +10,30 @@
     <button id="button">Click Me</button>
 
     <script>
-      var debounce = function debounce(func, delay) {
-        var inDebounce;
 
-        return function () {
-            var context = this;
-            var args = arguments;
+    //then show the debounce function
+    var debounce = function debounce(func, delay) {
 
-            clearTimeout(inDebounce);
+        var timeoutId;
 
-            inDebounce = setTimeout(function () {
-                return func.apply(context, args);
+        return function (...args) {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(function () {
+                func(...args);
             }, delay);
         };
     };
+        
+        //show this first, click it a few times so that we can see that its logging 
 
         var button = document.getElementById('button');
-        
-        button.addEventListener('click', debounce(function () {
+
+        var logToday = function () {
             console.log('Todays date is', new Date().toUTCString());
-        }, 3000));
+        }
+
+        button.addEventListener('click', debounce(logToday,2000));
+        
     </script>
 </body>
 </html>
