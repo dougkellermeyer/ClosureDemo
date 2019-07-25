@@ -32,7 +32,7 @@ keep() // => 1
 
 function secret(msg){
   return function(){
-    console.log("the secret message is " + msg);
+    console.log("the secret message is " + msg); 
   };
 };
 
